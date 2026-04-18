@@ -165,17 +165,30 @@
           const option = param.options[optionId];
 
           // Check if option is selected
-          const isSelected =
+          const optionSelected =
             formData[paramId] && formData[paramId].includes(optionId);
 
           // Add price if selected and not default
-          if (isSelected && !option.default) {
+          if (optionSelected && !option.default) {
             price += option.price;
           }
 
           // Subtract price if not selected but default
-          if (!isSelected && option.default) {
+          if (!optionSelected && option.default) {
             price -= option.price;
+          }
+          // find matching image
+          const optionImage = thisProduct.imageWrapper.querySelector(
+            "." + paramId + "-" + optionId,
+          );
+
+          // if image exists
+          if (optionImage) {
+            if (optionSelected) {
+              optionImage.classList.add(classNames.menuProduct.imageVisible);
+            } else {
+              optionImage.classList.remove(classNames.menuProduct.imageVisible);
+            }
           }
 
           console.log(optionId, option);
@@ -204,6 +217,9 @@
       );
       thisProduct.priceElem = thisProduct.element.querySelector(
         select.menuProduct.priceElem,
+      );
+      thisProduct.imageWrapper = thisProduct.element.querySelector(
+        select.menuProduct.imageWrapper,
       );
     }
   }
