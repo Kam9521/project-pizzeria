@@ -1,8 +1,7 @@
+ 'use strict';
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
 {
-  ("use strict");
-
   // Selectors used across the app
   const select = {
     templateOf: {
@@ -54,7 +53,7 @@
   // Compile Handlebars template
   const templates = {
     menuProduct: Handlebars.compile(
-      document.querySelector(select.templateOf.menuProduct).innerHTML,
+      document.querySelector(select.templateOf.menuProduct).innerHTML
     ),
   };
 
@@ -105,7 +104,7 @@
 
         // Find currently active product
         const activeProduct = document.querySelector(
-          select.all.menuProductsActive,
+          select.all.menuProductsActive
         );
 
         // Close other product if open
@@ -115,7 +114,7 @@
 
         // Toggle current product
         thisProduct.element.classList.toggle(
-          classNames.menuProduct.wrapperActive,
+          classNames.menuProduct.wrapperActive
         );
       });
     }
@@ -179,7 +178,7 @@
           }
           // find matching image
           const optionImage = thisProduct.imageWrapper.querySelector(
-            "." + paramId + "-" + optionId,
+            "." + paramId + "-" + optionId
           );
 
           // if image exists
@@ -204,22 +203,22 @@
       const thisProduct = this;
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(
-        select.menuProduct.clickable,
+        select.menuProduct.clickable
       );
       thisProduct.form = thisProduct.element.querySelector(
-        select.menuProduct.form,
+        select.menuProduct.form
       );
       thisProduct.formInputs = thisProduct.form.querySelectorAll(
-        select.all.formInputs,
+        select.all.formInputs
       );
       thisProduct.cartButton = thisProduct.element.querySelector(
-        select.menuProduct.cartButton,
+        select.menuProduct.cartButton
       );
       thisProduct.priceElem = thisProduct.element.querySelector(
-        select.menuProduct.priceElem,
+        select.menuProduct.priceElem
       );
       thisProduct.imageWrapper = thisProduct.element.querySelector(
-        select.menuProduct.imageWrapper,
+        select.menuProduct.imageWrapper
       );
     }
   }
