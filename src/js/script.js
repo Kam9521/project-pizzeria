@@ -5,7 +5,8 @@
   // Selectors used across the app
   const select = {
     templateOf: {
-      menuProduct: "#template-menu-product", // Handlebars template for product
+      menuProduct: "#template-menu-product",
+      cartProduct: "#template-cart-product", // Handlebars template for product
     },
     containerOf: {
       menu: "#product-list", // container for menu products
@@ -26,10 +27,11 @@
     },
     cart: {
       toggleTrigger: ".cart__summary",
+      productList: ".cart__order-summary",
     },
     widgets: {
       amount: {
-        input: 'input[name="amount"]',
+        input: 'input.amount',
         linkDecrease: 'a[href="#less"]',
         linkIncrease: 'a[href="#more"]',
       },
@@ -51,15 +53,21 @@
   const settings = {
     amountWidget: {
       defaultValue: 1,
-      defaultMin: 0,
-      defaultMax: 10,
+      defaultMin: 1,
+      defaultMax: 9,
+    },
+    cart: {
+      defaultDeliveryFee: 20,
     },
   };
 
   // Compile Handlebars template
   const templates = {
     menuProduct: Handlebars.compile(
-      document.querySelector(select.templateOf.menuProduct).innerHTML,
+      document.querySelector(select.templateOf.menuProduct).innerHTML
+    ),
+    cartProduct: Handlebars.compile(
+      document.querySelector(select.templateOf.cartProduct).innerHTML
     ),
   };
 
@@ -147,7 +155,53 @@
       thisProduct.cartButton.addEventListener("click", function (event) {
         event.preventDefault();
         thisProduct.processOrder();
+        thisProduct.addToCart();
       });
+    }
+    addToCart() {
+      const thisProduct = this;
+
+      app.cart.add(thisProduct.prepareCartProduct());
+    }
+    prepareCartProduct() {
+      const thisProduct = this;
+      const productSummary = {};
+
+      productSummary.id = thisProduct.id;
+      productSummary.name = thisProduct.data.name;
+      productSummary.amount = thisProduct.amountWidget.value;
+      productSummary.priceSingle = thisProduct.priceSingle;
+      productSummary.price =
+        thisProduct.priceSingle * thisProduct.amountWidget.value;
+      productSummary.params = thisProduct.prepareCartProductParams();
+
+      return productSummary;
+    }
+    prepareCartProductParams() {
+      const thisProduct = this;
+      const params = {};
+      const formData = utils.serializeFormToObject(thisProduct.form);
+
+      for (let paramId in thisProduct.data.params) {
+        const param = thisProduct.data.params[paramId];
+
+        params[paramId] = {
+          label: param.label,
+          options: {},
+        };
+
+        for (let optionId in param.options) {
+          const option = param.options[optionId];
+          const optionSelected =
+            formData[paramId] && formData[paramId].includes(optionId);
+
+          if (optionSelected) {
+            params[paramId].options[optionId] = option.label;
+          }
+        }
+      }
+
+      return params;
     }
 
     // Calculate product price based on selected options
@@ -200,6 +254,7 @@
           console.log(optionId, option);
         }
       }
+      thisProduct.priceSingle = price;
       price *= thisProduct.amountWidget.value;
       // Update price in UI
       thisProduct.priceElem.innerHTML = price;
@@ -260,6 +315,9 @@
       thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
         select.cart.toggleTrigger,
       );
+      thisCart.dom.productList = thisCart.dom.wrapper.querySelector(
+        select.cart.productList,
+      );
     }
     initActions() {
       const thisCart = this;
@@ -268,6 +326,18 @@
         thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
       });
     }
+    add(menuProduct) {
+      const thisCart = this;
+      
+
+      console.log("Cart.add", menuProduct);
+      const generatedHTML = templates.cartProduct(menuProduct);
+
+      const generatedDOM = utils.createDOMFromHTML(generatedHTML);
+      thisCart.dom.productList.appendChild(generatedDOM);
+      
+    }
+    
   }
 
   // Class responsible for handling amount widget (input + buttons)

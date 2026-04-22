@@ -58,7 +58,9 @@
     <div id="product-list" class="product-list container"></div>
 
     <script id="template-menu-product" type="text/x-handlebars-template">
+     
       <article class="product "> <!-- product -->
+        
 
           <header class="product__header">
             <h3 class="product__name no-spacing">{{ name }} <i class="fas fa-chevron-down product__icon"></i></h3>
@@ -115,7 +117,7 @@
                 <div class="widget-amount"> <!-- widget-amount -->
                   <h3 class="product__params-title">Select quantity</h3>
                   <a class="btn-quantity" href="#less"><i class="fas fa-minus"></i></a>
-                  <input type="text" name="amount" >
+                  <input type="text" class="amount" value="1">
                   <a class="btn-quantity" href="#more"><i class="fas fa-plus"></i></a>
                 </div>
                 <p class="product__total-price">
@@ -135,6 +137,36 @@
 
       </article> <!-- .product -->
     </script>
+    <script id="template-cart-product" type="text/x-handlebars-template">
+  <li class="cart__product">
+    <div class="cart__product-header">
+      <span class="cart__product-name">{{name}}</span>
+      <span class="cart__product-price">${{price}}</span>
+    </div>
+
+    <div class="cart__product-details">
+      <div class="widget-amount">
+        <a href="#less" class="btn-quantity">-</a>
+        <input type="text" class="amount" value="{{amount}}">
+        <a href="#more" class="btn-quantity">+</a>
+      </div>
+
+      <a href="#edit"><i class="fas fa-pencil-alt"></i></a>
+      <a href="#remove"><i class="fas fa-trash-alt"></i></a>
+    </div>
+
+    {{#if params}}
+  <ul class="cart__product-details">
+    {{#each params}}
+      <li>
+        <span>{{label}}:</span>
+        <span>{{joinValues options}}</span>
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}
+  </li>
+</script>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.0/handlebars.min.js"></script>
   <script src="js/functions.js"></script>
