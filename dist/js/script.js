@@ -24,6 +24,9 @@
       amountWidget: ".widget-amount",
       cartButton: '[href="#add-to-cart"]', // "Add to cart" button
     },
+    cart: {
+      toggleTrigger: ".cart__summary",
+    },
     widgets: {
       amount: {
         input: 'input[name="amount"]',
@@ -39,6 +42,9 @@
       wrapperActive: "active", // active product class
       imageVisible: "active",
     },
+    cart: {
+      wrapperActive: "active",
+    },
   };
 
   // App settings
@@ -53,7 +59,7 @@
   // Compile Handlebars template
   const templates = {
     menuProduct: Handlebars.compile(
-      document.querySelector(select.templateOf.menuProduct).innerHTML
+      document.querySelector(select.templateOf.menuProduct).innerHTML,
     ),
   };
 
@@ -105,7 +111,7 @@
 
         // Find currently active product
         const activeProduct = document.querySelector(
-          select.all.menuProductsActive
+          select.all.menuProductsActive,
         );
 
         // Close other product if open
@@ -115,7 +121,7 @@
 
         // Toggle current product
         thisProduct.element.classList.toggle(
-          classNames.menuProduct.wrapperActive
+          classNames.menuProduct.wrapperActive,
         );
       });
     }
@@ -179,7 +185,7 @@
           }
           // find matching image
           const optionImage = thisProduct.imageWrapper.querySelector(
-            "." + paramId + "-" + optionId
+            "." + paramId + "-" + optionId,
           );
 
           // if image exists
@@ -204,25 +210,25 @@
       const thisProduct = this;
 
       thisProduct.accordionTrigger = thisProduct.element.querySelector(
-        select.menuProduct.clickable
+        select.menuProduct.clickable,
       );
       thisProduct.form = thisProduct.element.querySelector(
-        select.menuProduct.form
+        select.menuProduct.form,
       );
       thisProduct.formInputs = thisProduct.form.querySelectorAll(
-        select.all.formInputs
+        select.all.formInputs,
       );
       thisProduct.cartButton = thisProduct.element.querySelector(
-        select.menuProduct.cartButton
+        select.menuProduct.cartButton,
       );
       thisProduct.priceElem = thisProduct.element.querySelector(
-        select.menuProduct.priceElem
+        select.menuProduct.priceElem,
       );
       thisProduct.imageWrapper = thisProduct.element.querySelector(
-        select.menuProduct.imageWrapper
+        select.menuProduct.imageWrapper,
       );
       thisProduct.amountWidgetElem = thisProduct.element.querySelector(
-        select.menuProduct.amountWidget
+        select.menuProduct.amountWidget,
       );
     }
     initAmountWidget() {
@@ -232,11 +238,38 @@
       thisProduct.amountWidgetElem.addEventListener("updated", function () {
         thisProduct.processOrder();
       });
-      
     }
-    
   }
-  
+  // Class responsible for handling cart logic
+  class Cart {
+    constructor(element) {
+      const thisCart = this;
+
+      thisCart.products = [];
+      thisCart.getElements(element);
+      thisCart.initActions();
+
+      console.log("Cart:", thisCart);
+    }
+
+    getElements(element) {
+      const thisCart = this;
+
+      thisCart.dom = {};
+      thisCart.dom.wrapper = element;
+      thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
+        select.cart.toggleTrigger,
+      );
+    }
+    initActions() {
+      const thisCart = this;
+
+      thisCart.dom.toggleTrigger.addEventListener("click", function () {
+        thisCart.dom.wrapper.classList.toggle(classNames.cart.wrapperActive);
+      });
+    }
+  }
+
   // Class responsible for handling amount widget (input + buttons)
   class AmountWidget {
     constructor(element) {
@@ -244,7 +277,7 @@
 
       console.log("AmountWidget:", thisWidget, element);
       thisWidget.getElements(element);
-      
+
       if (thisWidget.input.value) {
         thisWidget.setValue(thisWidget.input.value);
       } else {
@@ -330,6 +363,12 @@
         new Product(productId, productData);
       }
     },
+    initCart: function () {
+      const thisApp = this;
+
+      const cartElem = document.querySelector(select.containerOf.cart);
+      thisApp.cart = new Cart(cartElem);
+    },
 
     // App initialization
     init: function () {
@@ -343,6 +382,7 @@
 
       thisApp.initData();
       thisApp.initMenu();
+      thisApp.initCart();
     },
   };
 
