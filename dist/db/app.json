@@ -1,0 +1,179 @@
+{
+  "products": [
+    {
+      "id": "pizza",
+      "name": "Nonna Alba's Pizza",
+      "price": 20,
+      "params": {
+        "toppings": {
+          "label": "Toppings",
+          "type": "checkboxes",
+          "options": {
+            "olives": {
+              "label": "Olives",
+              "price": 2,
+              "default": true
+            },
+            "redPeppers": {
+              "label": "Red peppers",
+              "price": 2
+            },
+            "mushrooms": {
+              "label": "Mushrooms",
+              "price": 3
+            },
+            "salami": {
+              "label": "Salami",
+              "price": 3
+            },
+            "spinach": {
+              "label": "Spinach",
+              "price": 2
+            },
+            "cheese": {
+              "label": "Cheese",
+              "price": 2
+            }
+          }
+        },
+        "crust": {
+          "label": "Crust",
+          "type": "radios",
+          "options": {
+            "standard": {
+              "label": "Standard",
+              "price": 0,
+              "default": true
+            },
+            "thin": {
+              "label": "Thin",
+              "price": 2
+            },
+            "thick": {
+              "label": "Thick",
+              "price": 4
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "salad",
+      "name": "Nonno Alberto's Salad",
+      "price": 9,
+      "params": {
+        "ingredients": {
+          "label": "Ingredients",
+          "type": "checkboxes",
+          "options": {
+            "cucumber": {
+              "label": "Cucumber",
+              "price": 1,
+              "default": true
+            },
+            "tomatoes": {
+              "label": "Tomatoes",
+              "price": 1,
+              "default": true
+            },
+            "olives": {
+              "label": "Olives",
+              "price": 1,
+              "default": true
+            },
+            "feta": {
+              "label": "Feta cheese",
+              "price": 1
+            },
+            "cheese": {
+              "label": "Cheese",
+              "price": 1
+            },
+            "herbs": {
+              "label": "Fresh herbs",
+              "price": 1,
+              "default": true
+            },
+            "pepper": {
+              "label": "Black pepper",
+              "price": 1
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cake",
+      "name": "Zio Stefano's Doughnut",
+      "price": 9,
+      "params": {}
+    }
+  ],
+  "orders": [
+    {
+      "address": "szpmytyl123@wp.pl",
+      "phone": "536345",
+      "deliveryFee": 20,
+      "products": [],
+      "id": 1
+    },
+    {
+      "address": "szpmytyl123@wp.pl",
+      "phone": "536345",
+      "totalPrice": 29,
+      "subtotalPrice": 9,
+      "totalNumber": 1,
+      "deliveryFee": 20,
+      "products": [
+        {
+          "id": "salad",
+          "name": "Nonno Alberto's Salad",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "params": {
+            "ingredients": {
+              "label": "Ingredients",
+              "options": {
+                "cucumber": "Cucumber",
+                "tomatoes": "Tomatoes",
+                "olives": "Olives",
+                "herbs": "Fresh herbs"
+              }
+            }
+          }
+        }
+      ],
+      "id": 2
+    },
+    {
+      "address": "szpmytyl123@wp.pl",
+      "phone": "536345",
+      "totalPrice": 29,
+      "subtotalPrice": 9,
+      "totalNumber": 1,
+      "deliveryFee": 20,
+      "products": [
+        {
+          "id": "salad",
+          "name": "Nonno Alberto's Salad",
+          "amount": 1,
+          "price": 9,
+          "priceSingle": 9,
+          "params": {
+            "ingredients": {
+              "label": "Ingredients",
+              "options": {
+                "cucumber": "Cucumber",
+                "tomatoes": "Tomatoes",
+                "olives": "Olives",
+                "herbs": "Fresh herbs"
+              }
+            }
+          }
+        }
+      ],
+      "id": 3
+    }
+  ]
+}
