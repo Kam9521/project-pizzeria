@@ -108,7 +108,7 @@
       // Calculate initial price
       thisProduct.processOrder();
 
-      console.log("new Product:", thisProduct);
+      
     }
 
     // Render product HTML and add it to the DOM
@@ -121,7 +121,7 @@
       const menuContainer = document.querySelector(select.containerOf.menu);
       menuContainer.appendChild(thisProduct.element);
 
-      console.log("generatedHTML:", generatedHTML);
+      
     }
 
     // Accordion logic (open/close product)
@@ -224,7 +224,7 @@
 
       // Convert form inputs into JS object
       const formData = utils.serializeFormToObject(thisProduct.form);
-      console.log("formData", formData);
+      
 
       // Start from base price
       let price = thisProduct.data.price;
@@ -232,7 +232,7 @@
       // Loop through all params (categories)
       for (let paramId in thisProduct.data.params) {
         const param = thisProduct.data.params[paramId];
-        console.log(paramId, param);
+        
 
         // Loop through options in each category
         for (let optionId in param.options) {
@@ -265,7 +265,7 @@
             }
           }
 
-          console.log(optionId, option);
+          
         }
       }
       thisProduct.priceSingle = price;
@@ -318,7 +318,7 @@
       thisCart.getElements(element);
       thisCart.initActions();
 
-      console.log("Cart:", thisCart);
+      
     }
 
     getElements(element) {
@@ -375,7 +375,7 @@
     add(menuProduct) {
       const thisCart = this;
 
-      console.log("Cart.add", menuProduct);
+     
       const generatedHTML = templates.cartProduct(menuProduct);
 
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
@@ -406,7 +406,7 @@
         thisCart.totalPrice = subtotalPrice + deliveryFee;
       }
 
-      console.log(totalNumber, subtotalPrice, thisCart.totalPrice);
+      
       thisCart.dom.deliveryFee.innerHTML = totalNumber > 0 ? deliveryFee : 0;
 
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
@@ -466,7 +466,7 @@
     constructor(element) {
       const thisWidget = this;
 
-      console.log("AmountWidget:", thisWidget, element);
+      
       thisWidget.getElements(element);
 
       if (thisWidget.input.value) {
@@ -551,7 +551,7 @@
       thisCartProduct.getElements(element);
       thisCartProduct.initAmountWidget();
       thisCartProduct.initActions();
-      console.log("new CartProduct:", thisCartProduct);
+      
     }
 
     remove() {
@@ -652,7 +652,7 @@
     // Create product instances
     initMenu: function () {
       const thisApp = this;
-      console.log("thisApp.data:", thisApp.data);
+      
 
       for (let productId in thisApp.data.products) {
         const productData = thisApp.data.products[productId];
@@ -671,14 +671,7 @@
     init: function () {
       const thisApp = this;
 
-      console.log("*** App starting ***");
-      console.log("thisApp:", thisApp);
-      console.log("classNames:", classNames);
-      console.log("settings:", settings);
-      console.log("templates:", templates);
-
       thisApp.initData();
-      
       thisApp.initCart();
     },
   };
