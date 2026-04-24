@@ -317,8 +317,6 @@
       thisCart.products = [];
       thisCart.getElements(element);
       thisCart.initActions();
-
-      
     }
 
     getElements(element) {
@@ -375,7 +373,6 @@
     add(menuProduct) {
       const thisCart = this;
 
-     
       const generatedHTML = templates.cartProduct(menuProduct);
 
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
@@ -406,7 +403,6 @@
         thisCart.totalPrice = subtotalPrice + deliveryFee;
       }
 
-      
       thisCart.dom.deliveryFee.innerHTML = totalNumber > 0 ? deliveryFee : 0;
 
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
@@ -416,19 +412,15 @@
       thisCart.dom.totalNumber.innerHTML = totalNumber;
     }
     remove(cartProduct) {
-      const thisCart = this;
-
-      // remove element from DOM
       cartProduct.dom.wrapper.remove();
 
-      // find index in array
-      const index = thisCart.products.indexOf(cartProduct);
+      const index = this.products.indexOf(cartProduct);
 
-      // remove from array
-      thisCart.products.splice(index, 1);
+       if (index !== -1) {
+         this.products.splice(index, 1);
+       }
 
-      // update totals
-      thisCart.update();
+      this.update();
     }
     sendOrder() {
       const thisCart = this;
