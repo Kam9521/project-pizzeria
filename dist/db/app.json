@@ -111,34 +111,39 @@
   ],
   "orders": [
     {
-      "address": "szpmytyl123@wp.pl",
-      "phone": "536345",
+      "address": "",
+      "phone": "",
       "deliveryFee": 20,
       "products": [],
       "id": 1
     },
     {
-      "address": "szpmytyl123@wp.pl",
-      "phone": "536345",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
+      "address": "",
+      "phone": "",
+      "totalPrice": 45,
+      "subtotalPrice": 25,
       "totalNumber": 1,
       "deliveryFee": 20,
       "products": [
         {
-          "id": "salad",
-          "name": "Nonno Alberto's Salad",
+          "id": "pizza",
+          "name": "Nonna Alba's Pizza",
           "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
+          "price": 25,
+          "priceSingle": 25,
           "params": {
-            "ingredients": {
-              "label": "Ingredients",
+            "toppings": {
+              "label": "Toppings",
               "options": {
-                "cucumber": "Cucumber",
-                "tomatoes": "Tomatoes",
                 "olives": "Olives",
-                "herbs": "Fresh herbs"
+                "redPeppers": "Red peppers",
+                "mushrooms": "Mushrooms"
+              }
+            },
+            "crust": {
+              "label": "Crust",
+              "options": {
+                "standard": "Standard"
               }
             }
           }
@@ -147,19 +152,42 @@
       "id": 2
     },
     {
-      "address": "szpmytyl123@wp.pl",
-      "phone": "536345",
-      "totalPrice": 29,
-      "subtotalPrice": 9,
-      "totalNumber": 1,
+      "address": "",
+      "phone": "",
+      "totalPrice": 100,
+      "subtotalPrice": 80,
+      "totalNumber": 6,
       "deliveryFee": 20,
       "products": [
         {
+          "id": "pizza",
+          "name": "Nonna Alba's Pizza",
+          "amount": 1,
+          "price": 25,
+          "priceSingle": 25,
+          "params": {
+            "toppings": {
+              "label": "Toppings",
+              "options": {
+                "olives": "Olives",
+                "redPeppers": "Red peppers",
+                "mushrooms": "Mushrooms"
+              }
+            },
+            "crust": {
+              "label": "Crust",
+              "options": {
+                "standard": "Standard"
+              }
+            }
+          }
+        },
+        {
           "id": "salad",
           "name": "Nonno Alberto's Salad",
-          "amount": 1,
-          "price": 9,
-          "priceSingle": 9,
+          "amount": 5,
+          "price": 55,
+          "priceSingle": 11,
           "params": {
             "ingredients": {
               "label": "Ingredients",
@@ -167,6 +195,8 @@
                 "cucumber": "Cucumber",
                 "tomatoes": "Tomatoes",
                 "olives": "Olives",
+                "feta": "Feta cheese",
+                "cheese": "Cheese",
                 "herbs": "Fresh herbs"
               }
             }
@@ -174,6 +204,60 @@
         }
       ],
       "id": 3
+    },
+    {
+      "address": "",
+      "phone": "",
+      "totalPrice": 100,
+      "subtotalPrice": 80,
+      "totalNumber": 6,
+      "deliveryFee": 20,
+      "products": [
+        {
+          "id": "pizza",
+          "name": "Nonna Alba's Pizza",
+          "amount": 1,
+          "price": 25,
+          "priceSingle": 25,
+          "params": {
+            "toppings": {
+              "label": "Toppings",
+              "options": {
+                "olives": "Olives",
+                "redPeppers": "Red peppers",
+                "mushrooms": "Mushrooms"
+              }
+            },
+            "crust": {
+              "label": "Crust",
+              "options": {
+                "standard": "Standard"
+              }
+            }
+          }
+        },
+        {
+          "id": "salad",
+          "name": "Nonno Alberto's Salad",
+          "amount": 5,
+          "price": 55,
+          "priceSingle": 11,
+          "params": {
+            "ingredients": {
+              "label": "Ingredients",
+              "options": {
+                "cucumber": "Cucumber",
+                "tomatoes": "Tomatoes",
+                "olives": "Olives",
+                "feta": "Feta cheese",
+                "cheese": "Cheese",
+                "herbs": "Fresh herbs"
+              }
+            }
+          }
+        }
+      ],
+      "id": 4
     }
   ]
 }
