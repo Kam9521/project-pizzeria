@@ -9,50 +9,21 @@
           "label": "Toppings",
           "type": "checkboxes",
           "options": {
-            "olives": {
-              "label": "Olives",
-              "price": 2,
-              "default": true
-            },
-            "redPeppers": {
-              "label": "Red peppers",
-              "price": 2
-            },
-            "mushrooms": {
-              "label": "Mushrooms",
-              "price": 3
-            },
-            "salami": {
-              "label": "Salami",
-              "price": 3
-            },
-            "spinach": {
-              "label": "Spinach",
-              "price": 2
-            },
-            "cheese": {
-              "label": "Cheese",
-              "price": 2
-            }
+            "olives": { "label": "Olives", "price": 2, "default": true },
+            "redPeppers": { "label": "Red peppers", "price": 2 },
+            "mushrooms": { "label": "Mushrooms", "price": 3 },
+            "salami": { "label": "Salami", "price": 3 },
+            "spinach": { "label": "Spinach", "price": 2 },
+            "cheese": { "label": "Cheese", "price": 2 }
           }
         },
         "crust": {
           "label": "Crust",
           "type": "radios",
           "options": {
-            "standard": {
-              "label": "Standard",
-              "price": 0,
-              "default": true
-            },
-            "thin": {
-              "label": "Thin",
-              "price": 2
-            },
-            "thick": {
-              "label": "Thick",
-              "price": 4
-            }
+            "standard": { "label": "Standard", "price": 0, "default": true },
+            "thin": { "label": "Thin", "price": 2 },
+            "thick": { "label": "Thick", "price": 4 }
           }
         }
       }
@@ -66,38 +37,13 @@
           "label": "Ingredients",
           "type": "checkboxes",
           "options": {
-            "cucumber": {
-              "label": "Cucumber",
-              "price": 1,
-              "default": true
-            },
-            "tomatoes": {
-              "label": "Tomatoes",
-              "price": 1,
-              "default": true
-            },
-            "olives": {
-              "label": "Olives",
-              "price": 1,
-              "default": true
-            },
-            "feta": {
-              "label": "Feta cheese",
-              "price": 1
-            },
-            "cheese": {
-              "label": "Cheese",
-              "price": 1
-            },
-            "herbs": {
-              "label": "Fresh herbs",
-              "price": 1,
-              "default": true
-            },
-            "pepper": {
-              "label": "Black pepper",
-              "price": 1
-            }
+            "cucumber": { "label": "Cucumber", "price": 1, "default": true },
+            "tomatoes": { "label": "Tomatoes", "price": 1, "default": true },
+            "olives": { "label": "Olives", "price": 1, "default": true },
+            "feta": { "label": "Feta cheese", "price": 1 },
+            "cheese": { "label": "Cheese", "price": 1 },
+            "herbs": { "label": "Fresh herbs", "price": 1, "default": true },
+            "pepper": { "label": "Black pepper", "price": 1 }
           }
         }
       }
@@ -109,155 +55,59 @@
       "params": {}
     }
   ],
-  "orders": [
+  "orders": [],
+  "events": [
     {
-      "address": "",
-      "phone": "",
-      "deliveryFee": 20,
-      "products": [],
-      "id": 1
+      "id": 1,
+      "date": "2026-04-29",
+      "hour": "12:30",
+      "table": 1,
+      "repeat": false,
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
     },
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 45,
-      "subtotalPrice": 25,
-      "totalNumber": 1,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "pizza",
-          "name": "Nonna Alba's Pizza",
-          "amount": 1,
-          "price": 25,
-          "priceSingle": 25,
-          "params": {
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "redPeppers": "Red peppers",
-                "mushrooms": "Mushrooms"
-              }
-            },
-            "crust": {
-              "label": "Crust",
-              "options": {
-                "standard": "Standard"
-              }
-            }
-          }
-        }
-      ],
-      "id": 2
+      "id": 2,
+      "date": "2026-04-29",
+      "hour": "16:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
     },
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 100,
-      "subtotalPrice": 80,
-      "totalNumber": 6,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "pizza",
-          "name": "Nonna Alba's Pizza",
-          "amount": 1,
-          "price": 25,
-          "priceSingle": 25,
-          "params": {
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "redPeppers": "Red peppers",
-                "mushrooms": "Mushrooms"
-              }
-            },
-            "crust": {
-              "label": "Crust",
-              "options": {
-                "standard": "Standard"
-              }
-            }
-          }
-        },
-        {
-          "id": "salad",
-          "name": "Nonno Alberto's Salad",
-          "amount": 5,
-          "price": 55,
-          "priceSingle": 11,
-          "params": {
-            "ingredients": {
-              "label": "Ingredients",
-              "options": {
-                "cucumber": "Cucumber",
-                "tomatoes": "Tomatoes",
-                "olives": "Olives",
-                "feta": "Feta cheese",
-                "cheese": "Cheese",
-                "herbs": "Fresh herbs"
-              }
-            }
-          }
-        }
-      ],
-      "id": 3
+      "id": 3,
+      "date": "2026-04-30",
+      "hour": "12:00",
+      "table": 3,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["bread", "lemonWater"]
     },
     {
-      "address": "",
-      "phone": "",
-      "totalPrice": 100,
-      "subtotalPrice": 80,
-      "totalNumber": 6,
-      "deliveryFee": 20,
-      "products": [
-        {
-          "id": "pizza",
-          "name": "Nonna Alba's Pizza",
-          "amount": 1,
-          "price": 25,
-          "priceSingle": 25,
-          "params": {
-            "toppings": {
-              "label": "Toppings",
-              "options": {
-                "olives": "Olives",
-                "redPeppers": "Red peppers",
-                "mushrooms": "Mushrooms"
-              }
-            },
-            "crust": {
-              "label": "Crust",
-              "options": {
-                "standard": "Standard"
-              }
-            }
-          }
-        },
-        {
-          "id": "salad",
-          "name": "Nonno Alberto's Salad",
-          "amount": 5,
-          "price": 55,
-          "priceSingle": 11,
-          "params": {
-            "ingredients": {
-              "label": "Ingredients",
-              "options": {
-                "cucumber": "Cucumber",
-                "tomatoes": "Tomatoes",
-                "olives": "Olives",
-                "feta": "Feta cheese",
-                "cheese": "Cheese",
-                "herbs": "Fresh herbs"
-              }
-            }
-          }
-        }
-      ],
-      "id": 4
+      "id": 4,
+      "date": "2026-04-30",
+      "hour": "13:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 4,
+      "ppl": 3,
+      "starters": []
+    },
+    {
+      "id": 5,
+      "date": "2026-04-30",
+      "hour": "18:00",
+      "table": 2,
+      "repeat": "daily",
+      "duration": 2,
+      "ppl": 3,
+      "starters": ["lemonWater"]
     }
-  ]
+  ],
+  "bookings": []
 }
+

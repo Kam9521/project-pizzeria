@@ -1,5 +1,6 @@
 
 "use strict";
+import Booking from "./components/Booking.js";
 import { templates } from "./templates.js";
 import Product from "./components/Product.js";
 import Cart from "./components/Cart.js";
@@ -53,10 +54,23 @@ import CartProduct from "./components/CartProduct.js";
 
       thisApp.initData();
       thisApp.initCart();
+      this.initBooking();
+    },
+    initBooking: function () {
+      const thisApp = this;
+
+      // Find booking widget wrapper
+      const bookingContainer = document.querySelector(
+        select.containerOf.booking,
+      );
+
+      // Init booking component
+      thisApp.booking = new Booking(bookingContainer);
     },
   };
 
   // Start app
   app.init();
+  
 }
 
