@@ -1,7 +1,8 @@
 "use strict";
+import utils from "../functions.js";
 import { templates } from "../templates.js";
 import AmountWidget from "./AmountWidget.js";
-import { select, settings, classNames } from "../settings.js";
+import { select,  classNames} from "../settings.js";
 // Product class - represents single product instance
 class Product {
   constructor(id, data) {
@@ -46,7 +47,7 @@ class Product {
 
       // Find currently active product
       const activeProduct = document.querySelector(
-        select.all.menuProductsActive,
+        select.all.menuProductsActive
       );
 
       // Close other product if open
@@ -56,7 +57,7 @@ class Product {
 
       // Toggle current product
       thisProduct.element.classList.toggle(
-        classNames.menuProduct.wrapperActive,
+        classNames.menuProduct.wrapperActive
       );
     });
   }
@@ -172,7 +173,7 @@ class Product {
         }
         // find matching image
         const optionImage = thisProduct.imageWrapper.querySelector(
-          "." + paramId + "-" + optionId,
+          "." + paramId + "-" + optionId
         );
 
         // if image exists
@@ -196,25 +197,25 @@ class Product {
     const thisProduct = this;
 
     thisProduct.accordionTrigger = thisProduct.element.querySelector(
-      select.menuProduct.clickable,
+      select.menuProduct.clickable
     );
     thisProduct.form = thisProduct.element.querySelector(
-      select.menuProduct.form,
+      select.menuProduct.form
     );
     thisProduct.formInputs = thisProduct.form.querySelectorAll(
-      select.all.formInputs,
+      select.all.formInputs
     );
     thisProduct.cartButton = thisProduct.element.querySelector(
-      select.menuProduct.cartButton,
+      select.menuProduct.cartButton
     );
     thisProduct.priceElem = thisProduct.element.querySelector(
-      select.menuProduct.priceElem,
+      select.menuProduct.priceElem
     );
     thisProduct.imageWrapper = thisProduct.element.querySelector(
-      select.menuProduct.imageWrapper,
+      select.menuProduct.imageWrapper
     );
     thisProduct.amountWidgetElem = thisProduct.element.querySelector(
-      select.menuProduct.amountWidget,
+      select.menuProduct.amountWidget
     );
   }
   initAmountWidget() {

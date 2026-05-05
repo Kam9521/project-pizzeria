@@ -1,5 +1,6 @@
 "use strict";
-
+import { templates } from "../templates.js";
+import utils from "../functions.js";
 import CartProduct from "./CartProduct.js";
 import { select, settings, classNames } from "../settings.js";
 // Class responsible for handling cart logic
@@ -18,30 +19,30 @@ class Cart {
     thisCart.dom = {};
     thisCart.dom.wrapper = element;
     thisCart.dom.toggleTrigger = thisCart.dom.wrapper.querySelector(
-      select.cart.toggleTrigger,
+      select.cart.toggleTrigger
     );
     thisCart.dom.productList = thisCart.dom.wrapper.querySelector(
-      select.cart.productList,
+      select.cart.productList
     );
     thisCart.dom.deliveryFee = thisCart.dom.wrapper.querySelectorAll(
-      ".cart__order-price-sum",
+      ".cart__order-price-sum"
     )[1];
 
     thisCart.dom.subtotalPrice = thisCart.dom.wrapper.querySelectorAll(
-      ".cart__order-price-sum",
+      ".cart__order-price-sum"
     )[0];
 
     thisCart.dom.totalPrice = thisCart.dom.wrapper.querySelectorAll(
-      ".cart__order-price-sum",
+      ".cart__order-price-sum"
     )[2];
 
     thisCart.dom.totalNumber = thisCart.dom.wrapper.querySelector(
-      ".cart__total-number",
+      ".cart__total-number"
     );
     thisCart.dom.form = thisCart.dom.wrapper.querySelector(select.cart.form);
     thisCart.dom.phone = thisCart.dom.wrapper.querySelector(select.cart.phone);
     thisCart.dom.address = thisCart.dom.wrapper.querySelector(
-      select.cart.address,
+      select.cart.address
     );
   }
   initActions() {

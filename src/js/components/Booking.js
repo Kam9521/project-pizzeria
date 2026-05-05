@@ -27,10 +27,10 @@ class Booking {
 
     // Find amount widgets
     thisBooking.dom.peopleAmount = thisBooking.dom.wrapper.querySelector(
-      select.booking.peopleAmount,
+      select.booking.peopleAmount
     );
     thisBooking.dom.hoursAmount = thisBooking.dom.wrapper.querySelector(
-      select.booking.hoursAmount,
+      select.booking.hoursAmount
     );
   }
 
@@ -39,7 +39,7 @@ class Booking {
 
     // Init people amount widget
     thisBooking.peopleAmountWidget = new AmountWidget(
-      thisBooking.dom.peopleAmount,
+      thisBooking.dom.peopleAmount
     );
     thisBooking.dom.peopleAmount.addEventListener("updated", function () {
       // People amount changed
@@ -47,7 +47,7 @@ class Booking {
 
     // Init hours amount widget
     thisBooking.hoursAmountWidget = new AmountWidget(
-      thisBooking.dom.hoursAmount,
+      thisBooking.dom.hoursAmount
     );
     thisBooking.dom.hoursAmount.addEventListener("updated", function () {
       // Hours amount changed

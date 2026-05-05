@@ -1,7 +1,7 @@
 "use strict";
 
 import AmountWidget from "./AmountWidget.js";
-import { select, settings } from "../settings.js";
+import { select,  } from "../settings.js";
 class CartProduct {
   constructor(menuProduct, element) {
     const thisCartProduct = this;
@@ -39,23 +39,23 @@ class CartProduct {
     thisCartProduct.dom.wrapper = element;
     thisCartProduct.dom.amountWidget =
       thisCartProduct.dom.wrapper.querySelector(
-        select.cartProduct.amountWidget,
+        select.cartProduct.amountWidget
       );
     thisCartProduct.dom.price = thisCartProduct.dom.wrapper.querySelector(
-      select.cartProduct.price,
+      select.cartProduct.price
     );
     thisCartProduct.dom.edit = thisCartProduct.dom.wrapper.querySelector(
-      select.cartProduct.edit,
+      select.cartProduct.edit
     );
     thisCartProduct.dom.remove = thisCartProduct.dom.wrapper.querySelector(
-      select.cartProduct.remove,
+      select.cartProduct.remove
     );
   }
   initAmountWidget() {
     const thisCartProduct = this;
 
     thisCartProduct.amountWidget = new AmountWidget(
-      thisCartProduct.dom.amountWidget,
+      thisCartProduct.dom.amountWidget
     );
 
     thisCartProduct.dom.amountWidget.addEventListener("updated", function () {

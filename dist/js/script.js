@@ -1,12 +1,11 @@
 
 "use strict";
 import Booking from "./components/Booking.js";
-import { templates } from "./templates.js";
+
 import Product from "./components/Product.js";
 import Cart from "./components/Cart.js";
-import { select, settings, classNames } from "./settings.js";
-import AmountWidget from "./components/AmountWidget.js";
-import CartProduct from "./components/CartProduct.js";
+import { select, settings } from "./settings.js";
+
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
 {
@@ -61,8 +60,8 @@ import CartProduct from "./components/CartProduct.js";
 
       // Find booking widget wrapper
       const bookingContainer = document.querySelector(
-        select.containerOf.booking,
-      );
+        select.containerOf.booking
+      )
 
       // Init booking component
       thisApp.booking = new Booking(bookingContainer);
