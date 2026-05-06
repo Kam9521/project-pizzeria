@@ -36,8 +36,9 @@ import { select, settings } from "./settings.js";
 
       for (let productId in thisApp.data.products) {
         const productData = thisApp.data.products[productId];
+        const menuContainer = document.querySelector(select.containerOf.menu);
 
-        new Product(productData.id, productData);
+        new Product(productData.id, productData, menuContainer);
       }
     },
     initCart: function () {
@@ -61,7 +62,7 @@ import { select, settings } from "./settings.js";
       // Find booking widget wrapper
       const bookingContainer = document.querySelector(
         select.containerOf.booking
-      )
+      );
 
       // Init booking component
       thisApp.booking = new Booking(bookingContainer);
