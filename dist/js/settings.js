@@ -60,6 +60,7 @@ export const select = {
     peopleAmount: ".people-amount",
     hoursAmount: ".hours-amount",
     tables: ".floor-plan .table",
+    form: ".booking-form",
   },
 };
   
@@ -104,6 +105,7 @@ export const select = {
     booking: {
       loading: "loading",
       tableBooked: "booked",
+      tableSelected: "selected",
     },
     nav: {
       active: "active",
