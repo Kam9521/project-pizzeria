@@ -9,50 +9,21 @@
           "label": "Toppings",
           "type": "checkboxes",
           "options": {
-            "olives": {
-              "label": "Olives",
-              "price": 2,
-              "default": true
-            },
-            "redPeppers": {
-              "label": "Red peppers",
-              "price": 2
-            },
-            "mushrooms": {
-              "label": "Mushrooms",
-              "price": 3
-            },
-            "salami": {
-              "label": "Salami",
-              "price": 3
-            },
-            "spinach": {
-              "label": "Spinach",
-              "price": 2
-            },
-            "cheese": {
-              "label": "Cheese",
-              "price": 2
-            }
+            "olives": { "label": "Olives", "price": 2, "default": true },
+            "redPeppers": { "label": "Red peppers", "price": 2 },
+            "mushrooms": { "label": "Mushrooms", "price": 3 },
+            "salami": { "label": "Salami", "price": 3 },
+            "spinach": { "label": "Spinach", "price": 2 },
+            "cheese": { "label": "Cheese", "price": 2 }
           }
         },
         "crust": {
           "label": "Crust",
           "type": "radios",
           "options": {
-            "standard": {
-              "label": "Standard",
-              "price": 0,
-              "default": true
-            },
-            "thin": {
-              "label": "Thin",
-              "price": 2
-            },
-            "thick": {
-              "label": "Thick",
-              "price": 4
-            }
+            "standard": { "label": "Standard", "price": 0, "default": true },
+            "thin": { "label": "Thin", "price": 2 },
+            "thick": { "label": "Thick", "price": 4 }
           }
         }
       }
@@ -66,38 +37,13 @@
           "label": "Ingredients",
           "type": "checkboxes",
           "options": {
-            "cucumber": {
-              "label": "Cucumber",
-              "price": 1,
-              "default": true
-            },
-            "tomatoes": {
-              "label": "Tomatoes",
-              "price": 1,
-              "default": true
-            },
-            "olives": {
-              "label": "Olives",
-              "price": 1,
-              "default": true
-            },
-            "feta": {
-              "label": "Feta cheese",
-              "price": 1
-            },
-            "cheese": {
-              "label": "Cheese",
-              "price": 1
-            },
-            "herbs": {
-              "label": "Fresh herbs",
-              "price": 1,
-              "default": true
-            },
-            "pepper": {
-              "label": "Black pepper",
-              "price": 1
-            }
+            "cucumber": { "label": "Cucumber", "price": 1, "default": true },
+            "tomatoes": { "label": "Tomatoes", "price": 1, "default": true },
+            "olives": { "label": "Olives", "price": 1, "default": true },
+            "feta": { "label": "Feta cheese", "price": 1 },
+            "cheese": { "label": "Cheese", "price": 1 },
+            "herbs": { "label": "Fresh herbs", "price": 1, "default": true },
+            "pepper": { "label": "Black pepper", "price": 1 }
           }
         }
       }
@@ -129,10 +75,7 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "bread",
-        "lemonWater"
-      ]
+      "starters": ["bread", "lemonWater"]
     },
     {
       "id": 3,
@@ -142,10 +85,7 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "bread",
-        "lemonWater"
-      ]
+      "starters": ["bread", "lemonWater"]
     },
     {
       "id": 4,
@@ -165,466 +105,9 @@
       "repeat": "daily",
       "duration": 2,
       "ppl": 3,
-      "starters": [
-        "lemonWater"
-      ]
+      "starters": ["lemonWater"]
     }
   ],
-  "bookings": [
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 1
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 2
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 3
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 4
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 5
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 6
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [
-        "water"
-      ],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 7
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [
-        "water"
-      ],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 8
-    },
-    {
-      "date": "2026-05-15",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [
-        "water"
-      ],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 9
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 10
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 11
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 12
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 13
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 14
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 15
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 16
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 17
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 18
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 19
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 20
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 21
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 22
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 23
-    },
-    {
-      "date": "2026-05-09",
-      "hour": "12:00",
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 24
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 25
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 26
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 27
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 28
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 29
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 30
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 31
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 32
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 33
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 34
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 35
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 36
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 37
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 38
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 39
-    },
-    {
-      "date": "2026-05-17",
-      "hour": "12:00",
-      "table": 2,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 40
-    },
-    {
-      "date": "2026-05-16",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 41
-    },
-    {
-      "date": "2026-05-16",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 42
-    },
-    {
-      "date": "2026-05-16",
-      "hour": "12:00",
-      "table": 1,
-      "duration": 1,
-      "ppl": 1,
-      "starters": [],
-      "phone": "145145",
-      "address": "szpmytyl123@wp.pl",
-      "id": 43
-    }
-  ]
+  "bookings": []
 }
+

@@ -20,7 +20,7 @@ $(thisWidget.dom.input).rangeslider({
   polyfill: false,
   onSlide: function(position, value) {
     thisWidget.value = value;
-  },
+  }
 });
   }
 

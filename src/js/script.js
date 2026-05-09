@@ -1,10 +1,11 @@
 
 "use strict";
-import Booking from "./components/Booking.js";
 
+import Booking from "./components/Booking.js";
 import Product from "./components/Product.js";
 import Cart from "./components/Cart.js";
-import { select, settings } from "./settings.js";
+import { select, settings, classNames } from "./settings.js";
+import Carousel from "./components/Carousel.js";
 
 /* global Handlebars, utils, dataSource */ // eslint-disable-line no-unused-vars
 
@@ -41,11 +42,78 @@ import { select, settings } from "./settings.js";
         new Product(productData.id, productData, menuContainer);
       }
     },
+
+    // Initialize cart
     initCart: function () {
       const thisApp = this;
 
       const cartElem = document.querySelector(select.containerOf.cart);
       thisApp.cart = new Cart(cartElem);
+    },
+
+    // Initialize booking
+    initBooking: function () {
+      const thisApp = this;
+
+      const bookingContainer = document.querySelector(
+        select.containerOf.booking
+      );
+
+      thisApp.booking = new Booking(bookingContainer);
+    },
+    initCarousel: function () {
+      const carouselElem = document.querySelector(".js-carousel");
+
+      this.carousel = new Carousel(carouselElem);
+    },
+
+    // Initialize page navigation
+    initPages: function () {
+      const thisApp = this;
+
+      const pagesContainer = document.querySelector(select.containerOf.pages);
+
+      if (!pagesContainer) {
+        return;
+      }
+
+      thisApp.pages = pagesContainer.children;
+      thisApp.navLinks = document.querySelectorAll(select.nav.links);
+
+      const idFromHash = window.location.hash.replace("#", "") || "home";
+
+      for (let page of thisApp.pages) {
+        page.classList.toggle(classNames.pages.active, page.id == idFromHash);
+      }
+
+      for (let link of thisApp.navLinks) {
+        link.classList.toggle(
+          classNames.nav.active,
+          link.getAttribute("href") == "#" + idFromHash
+        );
+      }
+
+      for (let link of thisApp.navLinks) {
+        link.addEventListener("click", function (event) {
+          event.preventDefault();
+
+          const clickedElement = this;
+          const id = clickedElement.getAttribute("href").replace("#", "");
+
+          for (let page of thisApp.pages) {
+            page.classList.toggle(classNames.pages.active, page.id == id);
+          }
+
+          for (let link of thisApp.navLinks) {
+            link.classList.toggle(
+              classNames.nav.active,
+              link.getAttribute("href") == "#" + id
+            );
+          }
+
+          window.location.hash = "#" + id;
+        });
+      }
     },
 
     // App initialization
@@ -54,23 +122,13 @@ import { select, settings } from "./settings.js";
 
       thisApp.initData();
       thisApp.initCart();
-      this.initBooking();
-    },
-    initBooking: function () {
-      const thisApp = this;
-
-      // Find booking widget wrapper
-      const bookingContainer = document.querySelector(
-        select.containerOf.booking
-      );
-
-      // Init booking component
-      thisApp.booking = new Booking(bookingContainer);
-    },
+      thisApp.initBooking();
+      thisApp.initPages();
+      thisApp.initCarousel();
+    }
   };
 
   // Start app
   app.init();
-  
 }
 

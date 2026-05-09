@@ -93,8 +93,8 @@ class Product {
     const event = new CustomEvent("add-to-cart", {
       bubbles: true,
       detail: {
-        product: thisProduct.prepareCartProduct(),
-      },
+        product: thisProduct.prepareCartProduct()
+      }
     });
 
     thisProduct.element.dispatchEvent(event);
@@ -123,7 +123,7 @@ class Product {
 
       params[paramId] = {
         label: param.label,
-        options: {},
+        options: {}
       };
 
       for (let optionId in param.options) {
