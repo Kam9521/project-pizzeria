@@ -256,7 +256,7 @@ class Booking {
       ppl: thisBooking.peopleAmountWidget.value,
       starters: [],
       phone: thisBooking.dom.form.querySelector('[name="phone"]').value,
-      address: thisBooking.dom.form.querySelector('[name="address"]').value,
+      address: thisBooking.dom.form.querySelector('[name="address"]').value
     };
 
     // get starters (checkboxes)
@@ -273,7 +273,7 @@ class Booking {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(payload)
     }).then(function () {
       // update local data (no refresh needed)
       thisBooking.makeBooked(
