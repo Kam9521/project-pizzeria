@@ -9,6 +9,8 @@ class Carousel {
     thisCarousel.dom.slides = element.querySelectorAll(".quote");
     thisCarousel.currentSlide = 0;
 
+    thisCarousel.dom.slides[thisCarousel.currentSlide].classList.add("active");
+
     thisCarousel.initCarousel();
   }
 

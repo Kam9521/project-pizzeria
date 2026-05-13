@@ -79,39 +79,36 @@ import Carousel from "./components/Carousel.js";
 
       thisApp.pages = pagesContainer.children;
       thisApp.navLinks = document.querySelectorAll(select.nav.links);
+      thisApp.pageLinks = document.querySelectorAll('a[href^="#"]');
+
+      const activatePage = function (pageId) {
+        for (let page of thisApp.pages) {
+          page.classList.toggle(classNames.pages.active, page.id == pageId);
+        }
+
+        for (let link of thisApp.navLinks) {
+          link.classList.toggle(
+            classNames.nav.active,
+            link.getAttribute("href") == "#" + pageId
+          );
+        }
+
+        window.location.hash = "#" + pageId;
+      };
 
       const idFromHash = window.location.hash.replace("#", "") || "home";
 
-      for (let page of thisApp.pages) {
-        page.classList.toggle(classNames.pages.active, page.id == idFromHash);
-      }
+      activatePage(idFromHash);
 
-      for (let link of thisApp.navLinks) {
-        link.classList.toggle(
-          classNames.nav.active,
-          link.getAttribute("href") == "#" + idFromHash
-        );
-      }
-
-      for (let link of thisApp.navLinks) {
+      for (let link of thisApp.pageLinks) {
         link.addEventListener("click", function (event) {
-          event.preventDefault();
-
           const clickedElement = this;
           const id = clickedElement.getAttribute("href").replace("#", "");
 
-          for (let page of thisApp.pages) {
-            page.classList.toggle(classNames.pages.active, page.id == id);
+          if (document.getElementById(id)) {
+            event.preventDefault();
+            activatePage(id);
           }
-
-          for (let link of thisApp.navLinks) {
-            link.classList.toggle(
-              classNames.nav.active,
-              link.getAttribute("href") == "#" + id
-            );
-          }
-
-          window.location.hash = "#" + id;
         });
       }
     },
